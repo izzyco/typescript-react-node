@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "dist/server",
+    "rootDir": "src/server",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/server/**/*"
+  ],
+  "exclude": [
+    "src/client",
+    "node_modules",
+    "dist"
+  ]
+}

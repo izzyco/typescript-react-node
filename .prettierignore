@@ -1,0 +1,16 @@
+# Ignore build outputs
+dist/
+node_modules/
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore generated files
+*.log
+.env
+.env.local
+.env.production
+
+# Ignore markdown files if you prefer manual formatting
+# *.md

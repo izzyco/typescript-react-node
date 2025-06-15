@@ -1,0 +1,36 @@
+# fly.toml - generated via `flyctl launch --dockerfile Dockerfile`
+app = "simple-react-fullstack"
+primary_region = "iad"  # pick a region close to your users
+
+[build]
+  # we're using our Dockerfile
+  dockerfile = "Dockerfile"
+
+[env]
+  # default port for Express
+  PORT = "8080"
+  NODE_ENV = "production"
+
+[deploy]
+  strategy = "rolling"
+
+[experimental]
+  buffer_size = "2mb"   # log buffer tuning (optional)
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  # enable a small health check
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    restart_limit = 2
