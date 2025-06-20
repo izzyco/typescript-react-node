@@ -1,3 +1,8 @@
 {
-  "watch": ["src/server/"]
+	"watch": ["src/server"],
+	"ext": "ts",
+	"ignore": ["src/**/*.spec.ts"],
+	"env": {
+		"TS_NODE_PROJECT": "./tsconfig.server.json"
+	}
 }
